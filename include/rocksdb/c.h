@@ -1036,11 +1036,21 @@ extern ROCKSDB_LIBRARY_API void rocksdb_readoptions_set_read_tier(
     rocksdb_readoptions_t*, int);
 extern ROCKSDB_LIBRARY_API void rocksdb_readoptions_set_tailing(
     rocksdb_readoptions_t*, unsigned char);
+extern ROCKSDB_LIBRARY_API void rocksdb_readoptions_set_managed(
+    rocksdb_readoptions_t*, unsigned char);
 extern ROCKSDB_LIBRARY_API void rocksdb_readoptions_set_readahead_size(
     rocksdb_readoptions_t*, size_t);
+extern ROCKSDB_LIBRARY_API void rocksdb_readoptions_set_prefix_same_as_start(
+    rocksdb_readoptions_t*, unsigned char);
 extern ROCKSDB_LIBRARY_API void rocksdb_readoptions_set_pin_data(
     rocksdb_readoptions_t*, unsigned char);
 extern ROCKSDB_LIBRARY_API void rocksdb_readoptions_set_total_order_seek(
+    rocksdb_readoptions_t*, unsigned char);
+extern ROCKSDB_LIBRARY_API void rocksdb_readoptions_set_max_skippable_internal_keys(
+    rocksdb_readoptions_t*, uint64_t);
+extern ROCKSDB_LIBRARY_API void rocksdb_readoptions_set_background_purge_on_iterator_cleanup(
+    rocksdb_readoptions_t*, unsigned char);
+extern ROCKSDB_LIBRARY_API void rocksdb_readoptions_set_ignore_range_deletions(
     rocksdb_readoptions_t*, unsigned char);
 
 /* Write options */
@@ -1053,6 +1063,12 @@ extern ROCKSDB_LIBRARY_API void rocksdb_writeoptions_set_sync(
     rocksdb_writeoptions_t*, unsigned char);
 extern ROCKSDB_LIBRARY_API void rocksdb_writeoptions_disable_WAL(
     rocksdb_writeoptions_t* opt, int disable);
+extern ROCKSDB_LIBRARY_API void rocksdb_writeoptions_set_ignore_missing_column_families(
+    rocksdb_writeoptions_t*, unsigned char);
+extern ROCKSDB_LIBRARY_API void rocksdb_writeoptions_set_no_slowdown(
+    rocksdb_writeoptions_t*, unsigned char);
+extern ROCKSDB_LIBRARY_API void rocksdb_writeoptions_set_low_pri(
+    rocksdb_writeoptions_t*, unsigned char);
 
 /* Compact range options */
 
